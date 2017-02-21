@@ -1,0 +1,124 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                          Git4Gas
+%
+% Git Guide specially designed and targeted for GCS group at CERN
+% This document is opensource and people are encouraged to give
+% feedback and contribute (at some point this will be on a git repo)
+%
+% Even though it is targeted for the GCS group at CERN, the guide is 
+% done in such a way that should be useful for everyone using GitLab
+% or any other git service.
+% 
+% This is not a formal guide but a friendly, well explained guide 
+% that should allow people to get started fast and easily and to 
+% get a hold on what git is, how it's intended to be used and more
+% importantly, how to use it
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                          License GPLv3 
+%
+%=====I'm not your momma, go Google the damn license yourself======
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{natbib}
+\bibliographystyle{apalike-en}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{soul}
+
+
+\usepackage[english]{babel} % Pour adopter les règles de typographie française
+\usepackage[T1]{fontenc} % Pour que les lettres accentuées soient reconnues
+
+\usepackage{url}
+\urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
+\urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
+\urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\begin{document}
+
+\mainmatter 
+
+\title{How to manage eLogs on VMs for the Gas Group}
+
+    \titlerunning{A step by step guide on how Virtual Machine eLogs should be managed and modified, including access rights and problem solving }
+
+\author{Alvaro Diez}
+
+\institute{CERN (Universidad de Cantabria)}
+
+%\authorrunning{Alvaro Diez}
+
+\toctitle{Abstract}
+\tocauthor{{}}
+
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+\newpage
+
+\medskip
+
+\begingroup
+\let\clearpage\relax
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{Introduction}
+\endgroup
+
+\medskip
+\medskip
+\section*{Index}
+
+\section{What is a VM}
+
+
+
+\subsection{Technicalities and WHY we use them for eLogs}
+
+In a loose sense, a VM (Virtual Machine) is any kind of vitalisation technology that allows a certain machine behave in such a way that it simulates being a different machine. Vitualization technologies are very useful as security measures and also as a way to ensure that future technology remains backwards compatible (by simulating it is a different, older, technology) 
+
+For the Gas Group only computer virtualisation is  used so far so we will focus on that bit and will try to explain in a straight forward manner what is and how to use certain virtualisations; only those relevant for the group.
+
+For the Gas Group only Virtual Machine that is relevant (at least for the moment) is the Virtual Computer provided by CERN via the OpenStack platform. This kind of VM is designed to simulate being a full computer while using the resources of many, one or even less than one full physical computer. Thought this might sound stupid at first, we will show why this is a great way to do things.
+
+Normally computers can be divided in two different groups: consumer grade computers and enterprise oriented computers, that can be related directly to desktops and laptops for consumer-grade ones and servers for enterprise oriented ones. Computers in the latter group are ususally more expensive when looking at performance per euro but have much higher quality components than make them reliable for 24/7 operation as well as much power efficient\footnote{Power consumption is one of the main concerns in computer farms like the ones at CERN}
+
+
+\subsection{Practicalities and HOW to use them}
+
+From a practical point of view a VM could be seen as a normal computer that you can never touch. It is somewhere else and you can only access it if you have network connection, but for the rest it's just like a normal computer. Connection is usually achieved via the Remote Desktop protocol.
+
+\section{eLog Proyect: Access rights and line of command}
+
+To ensure a good managing system of the eLogs and prevent any person to be fully responsible of the project\footnote{This would mean that if that person is gone, the project is deleted by default} we have followed a number of steps that isolate the project from a person and puts an eGroup as responsible of said project meaning not only will the project remain active regardless of how many people leave but also that many people can have administrator rights over the VM associated to the project.
+
+The structure and command line of the projects and VM is not easy at first and that's why we decide to include a whole section dedicated to how it works and how one can modify the eLog in a sensible and efficient way.
+
+\subsection{Hierarchy and rationale of user's rights}
+\subsection{How to modify VMs or project resources}
+\subsection{Back-ups for eLogs and VMs i.e. how to save your ass if you screw it big time}
+
+\section{Usual Procedure for eLog modification}
+
+\subsection{Modify parameters/options}
+\subsection{Check who is registered and previous entries "offline"}
+\section{Update changes}
+
+
+\nocite{*} 
+
+\end{document}
